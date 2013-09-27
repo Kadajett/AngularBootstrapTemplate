@@ -1,0 +1,69 @@
+Angular Bootstrap Template Simple Design Doc
+
+9/26/13 - Jeremy Stover
+
+/* the purpose of this document is to lay out the concepts for the Vacation Innovations Resort Site Template. */
+
+The need for this website is to easily and quickly produce websites that are easy to edit, and good looking, while
+dynamically serving data for each resort page. 
+
+The technologies that will be used to make this possible, are Angular.js(Google) and Twitter Bootstrap(Twitter)
+
+Uses of each technology: 
+
+Angular.js: Angular will be used to communicate between the the server and the front end of each website. It will be
+pulling data for a multitude of things. Including but not limited to: Styling data, images, descriptive data, SEO data,
+and link URLs. Angular will pull data from a server holding information that is easily created and edited based on a 
+resort id EX.(HYATT_RESORT_MIAMI). This has the power to overwrite default styles, and pull in images like logos and 
+resort photos. 
+
+
+
+Twitter Bootstrap: Bootstrap is a css framework built with LESS.css that makes creating websites mobile ready, fully
+responsive and adaptive, and easy to normalize. Bootstrap has a very full documentation, and grants simple access to 
+jquery effects that would make any website more usable. Bootstrap has styling guidelines that help to keep HTML and CSS 
+very normalized. Bootstrap is also very easily editable, considering it is open sourced, you can modify the base 
+'bootstrap.css' with ease, but it is very advised, and required for this project to just overwrite the css in a
+seperate file to prevent having to revert on fatal code bugs. 
+
+
+
+[TODO: create html+css coding guidelines for normalized and easily editable code]
+
+Angular.js + Bootstrap.css: The way Angular.js benefits Bootstrap.css, is that you can have normalized overwrites such as:
+
+[HTML]
+<div ng-controller="MyCtrl" ng-style="{color: myColor}">
+  <input type="text" ng-model="myColor" placeholder="enter a color name">
+  <div ng-repeat="item in items" ng-class="{'pending-delete': item.checked}">
+    name: {{item.name}}, {{item.title}}
+    <input type="checkbox" ng-model="item.checked"> <spen ng-show="item.checked">(will be deleted)</span>
+  </div>
+  <p>
+   <div ng-hide="myColor== 'red'">I will hide if the color is set to 'red'.</div>
+</div>
+[/HTML]
+
+[JS]
+var myApp = angular.module('myApp', []);
+
+function MyCtrl($scope) {
+    $scope.items = [
+        {
+        name: 'Misko',
+        title: 'Angular creator'},
+        {
+        name: 'Igor',
+        title: 'Meetup master'},
+        {
+        name: 'Vojta',
+        title: 'All-around superhero'}
+
+    ];
+}
+[/JS]
+
+
+With this code example, you can type in the name of a color, and the text color changes dynamically. in place 
+of the text field, angular will pull the color data down from a database where the styling would have been chosen
+by a designer. 
