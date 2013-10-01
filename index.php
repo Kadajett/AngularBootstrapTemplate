@@ -130,6 +130,7 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="../../assets/js/jquery.js"></script>
     <script src="../../dist/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
     <script src="offcanvas.js"></script>
   </body>
 </html>
